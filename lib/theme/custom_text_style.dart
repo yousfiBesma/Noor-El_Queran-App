@@ -27,6 +27,12 @@ class CustomTextStyles {
         fontSize: 24.fSize,
         fontWeight: FontWeight.w700,
       );
+  static get headlineSmallInterPrimary =>
+      theme.textTheme.headlineSmall!.inter.copyWith(
+        color: theme.colorScheme.primary,
+        fontSize: 24.fSize,
+        fontWeight: FontWeight.w700,
+      );
   // Title text style
   static get titleSmallUrbanist =>
       theme.textTheme.titleSmall!.urbanist.copyWith(
