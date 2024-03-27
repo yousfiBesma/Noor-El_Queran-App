@@ -10,7 +10,7 @@ class SendCodeScreen extends StatelessWidget {
   const SendCodeScreen({Key? key}) : super(key: key);
 
   @override
-  /*Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -24,7 +24,8 @@ class SendCodeScreen extends StatelessWidget {
                       Padding(
                           padding: EdgeInsets.only(left: 1.h),
                           child: Text("OTP Verification",
-                              style: theme.textTheme.headlineLarge)),
+                              style: CustomTextStyles
+                                  .headlineLargePoppinsGray800)),
                       SizedBox(height: 17.v),
                       Container(
                           width: 324.h,
@@ -33,8 +34,7 @@ class SendCodeScreen extends StatelessWidget {
                               "We’ve sent an SMS with an activation code to your phone +213 6 94 27 84 11",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: CustomTextStyles
-                                  .bodyLargeInterPrimaryContainer
+                              style: theme.textTheme.bodyLarge!
                                   .copyWith(height: 1.25))),
                       SizedBox(height: 95.v),
                       Padding(
@@ -42,30 +42,51 @@ class SendCodeScreen extends StatelessWidget {
                           child: CustomPinCodeTextField(
                               context: context, onChanged: (value) {})),
                       SizedBox(height: 39.v),
-                      Container(
-                          width: 40.h,
-                          margin: EdgeInsets.only(left: 136.h),
-                          child: Text("Verify code",
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: CustomTextStyles.titleSmallUrbanist)),
-                      SizedBox(height: 67.v),
                       Align(
                           alignment: Alignment.center,
+                          child: SizedBox(
+                              height: 66.v,
+                              width: 302.h,
+                              child: Stack(
+                                  alignment: Alignment.bottomCenter,
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.topLeft,
+                                        child: Container(
+                                            width: 40.h,
+                                            margin:
+                                                EdgeInsets.only(left: 120.h),
+                                            child: Text("Verify code",
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.center,
+                                                style: theme
+                                                    .textTheme.titleSmall))),
+                                    CustomElevatedButton(
+                                        height: 49.v,
+                                        width: 302.h,
+                                        text: "Verify code",
+                                        buttonStyle: CustomButtonStyles
+                                            .fillErrorContainer,
+                                        buttonTextStyle:
+                                            theme.textTheme.titleSmall!,
+                                        alignment: Alignment.bottomCenter)
+                                  ]))),
+                      SizedBox(height: 18.v),
+                      Container(
+                          width: 145.h,
+                          margin: EdgeInsets.only(left: 83.h),
                           child: RichText(
                               text: TextSpan(children: [
                                 TextSpan(
-                                    text: "Code expires in:",
-                                    style: CustomTextStyles
-                                        .titleSmallUrbanistff9b9fd0),
+                                    text: "Didn’t received code?",
+                                    style: CustomTextStyles.titleSmallff9b9fd0),
                                 TextSpan(text: " "),
                                 TextSpan(
-                                    text: "00:40",
-                                    style: CustomTextStyles
-                                        .titleSmallUrbanistff939393)
+                                    text: "Resend",
+                                    style: CustomTextStyles.titleSmallff9747ff)
                               ]),
-                              textAlign: TextAlign.left)),
+                              textAlign: TextAlign.center)),
                       SizedBox(height: 5.v)
                     ]))));
   }
@@ -76,103 +97,14 @@ class SendCodeScreen extends StatelessWidget {
         leadingWidth: double.maxFinite,
         leading: AppbarLeadingIconbutton(
             imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.fromLTRB(28.h, 9.v, 326.h, 9.v),
+            margin: EdgeInsets.fromLTRB(25.h, 9.v, 329.h, 9.v),
             onTap: () {
               onTapArrowLeft(context);
             }));
   }
 
-  /// Navigates back to the previous screen.
+  /// Navigates back to the previous screen
   onTapArrowLeft(BuildContext context) {
     Navigator.pop(context);
   }
-}*/
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: _buildAppBar(context),
-        body: Container(
-          width: double.maxFinite,
-          padding: EdgeInsets.symmetric(horizontal: 33.h, vertical: 21.v),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 1.h),
-                child: Text("OTP Verification",
-                  style: CustomTextStyles.headline) ),
-              SizedBox(height: 17.v),
-              Align(      
-                alignment: Alignment.center
-                child: Container(
-                  width: 324.h,
-                  margin: EdgeInsets.only(left: 14.h, right: 12.h),
-                  child: Text(
-                    "We’ve sent an SMS with an activation code to your phone +213 6 94 27 84 11",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme. textTheme. bodyLarge!
-                      .copyWith(height: 1.25)))),
-              SizedBox(height: 95.v),
-              Padding(
-                padding: EdgeInsets.only(left: 25.h, right: 24.h),
-                child: CustomPinCodeTextField(
-                context: context, onChanged: (value) {})),
-              SizedBox(height: 39.v),
-              Align(
-                alignment: Alignment.center
-                child: SizedBox(
-                  height: 66.v,
-                  width: 302.h,
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          width: 40.h,
-                          margin:
-                            EdgeInsets.only(left: 120.h),
-                          child: Text("Verify code",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: theme
-                              .textTheme.titleSmall))),
-                      CustomElevatedButton(
-                        height: 49.v,
-                        width: 302.h,
-                        text: "Verify code",
-                        buttonStyle: CustomButtonStyles
-                          .fillErrorContainer,
-                        buttonTextStyle:
-                          theme.textTheme.titleSmall!,
-                        alignment: Alignment. bottomCenter)
-                    ]))),
-              SizedBox(height: 18.v),
-              Container(
-                width: 145.h,
-                margin: EdgeInsets.only(left: 95.h),
-                child: RichText(
-                  text: TextSpan(children: [
-                    TextSpan(
-                      text: "Didn’t received code?",
-                      style: CustomTextStyles.titleSmallff9b9fd0) ,
-                    TextSpan(text: " "),
-                    TextSpan(
-                      text: "Resend",
-                      style: CustomTextStyles.titleSmallff9747ff )
-                  ]),
-                  textAlign: TextAlign.center)),
-              SizedBox(height: 5.v)
-            ]))));
-  }
-
-
-  /// Navigates back to the previous screen
-  onTapBtnArrowLeft(BuildContext context) {
-    Navigator.pop(context) ;
-  }
 }
-
