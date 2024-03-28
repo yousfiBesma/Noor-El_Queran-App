@@ -76,12 +76,19 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 54.v),
-                    CustomElevatedButton(
+                    CustomElevatedButton (
+                      height: 55.v,
                       text: "Next",
                       margin: EdgeInsets.only(right: 10.h),
-                    ),
+                      buttonStyle:
+                        CustomButtonStyles.fillWhiteA,
+                      buttonTextStyle: CustomTextStyles
+                          .headlineSmallBlack90025,
+                      onPressed: () {
+                        onTapNext (context) ;
+                      }),
                     SizedBox(height: 5.v),
-                  ],
+                  ]
                 ),
               ),
             ),
@@ -89,5 +96,9 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  onTapNext(BuildContext context){
+    Navigator.pushNamed(context, AppRoutes.sendCodeScreen);
   }
 }

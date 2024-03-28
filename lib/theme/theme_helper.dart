@@ -155,12 +155,28 @@ class PrimaryColors {
   // Black
   Color get black900 => Color(0XFF000000);
 
+  //BlueGray
+  Color get blueGray100 => Color(0XFFD9D9D9);
+
   // DeepPurple
   Color get deepPurpleA200 => Color(0XFF8B70FD);
+  Color get deepPurpleA20001 => Color(0XFF9747FF);
 
   // Gray
   Color get gray500 => Color(0XFFA7A7A7);
   Color get gray600 => Color(0XFF696B6F);
+
+  //white
+  Color get whiteA700 => Color(0XFFFFFFFF);
+
+  //Lime
+  Color get limeA200 => Color(0XFFF3F637);
+
+  //Indigo
+  Color get indigo300 => Color(0XFF7B80C6);
+
+  //Green
+  Color get green600 => Color(0XFF41966F);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

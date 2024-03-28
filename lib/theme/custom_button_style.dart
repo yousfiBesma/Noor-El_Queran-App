@@ -23,4 +23,12 @@ class CustomButtonStyles {
           borderRadius: BorderRadius.circular(27.h),
         ),
       );
+
+  static ButtonStyle get fillWhiteA => ElevatedButton.styleFrom(
+    backgroundColor: appTheme.whiteA700,
+    shape: RoundedRectangleBorder (
+    borderRadius: BorderRadius.circular(27.h),
+    ),
+  );
+
 }
